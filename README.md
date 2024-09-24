@@ -73,5 +73,5 @@ The dashboard has 6 options. It is mainly divided into 3 sections.
    <img src="https://github.com/user-attachments/assets/0ac1bf0f-6c4a-4a6a-a9e3-dc1f7cc690c9" width="25%">
 
 
-<h4>The dataset can be found in the Kaggle. The link is given below:</h4>
+<h4>The disease detection dataset can be found in the Kaggle. The link is given below:</h4>
 https://www.kaggle.com/datasets/ahammadmejbah/nadimbhaia/data
