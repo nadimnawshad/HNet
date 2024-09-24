@@ -11,7 +11,7 @@ from keras.models import load_model
 var1 = sys.argv[1]  # first parameter
 var2 = sys.argv[2]  # second parameter
 var3 = sys.argv[3]  # third parameter
-
+var4 = sys.argv[4]  # third parameter
 model = load_model("best_model.h5")
 disease_info = pd.read_csv('disease_info.csv', encoding='cp1252')
 
@@ -20,6 +20,7 @@ def prediction(path1, path2, path3):
     path1 = 'C:/xampp/htdocs/hhgg/disease_images/' + path1
     path2 = 'C:/xampp/htdocs/hhgg/disease_images/' + path2
     path3 = 'C:/xampp/htdocs/hhgg/disease_images/' + path3
+    path4 = 'C:/xampp/htdocs/hhgg/disease_images/' + path4
 
     img1 = load_img(path1, target_size=(256, 256))
     i1 = img_to_array(img1)
@@ -39,16 +40,14 @@ def prediction(path1, path2, path3):
     img3 = np.expand_dims(im3, axis=0)
     pred3 = np.argmax(model.predict(img3))
 
-    if (pred1 == pred2) or (pred1 == pred3):
+    img4 = load_img(path4, target_size=(256, 256))
+    i4 = img_to_array(img4)
+    im4 = preprocess_input(i4)
+    img4 = np.expand_dims(im4, axis=0)
+    pred4 = np.argmax(model.predict(img4))
+    
+    if (pred1 == pred2) and (pred1 == pred3) and (pred1 == pred4):
         pred = pred1
-        title = disease_info['disease_name'][pred]
-        description = disease_info['description'][pred]
-        supplement_name = disease_info['supplement_name'][pred]
-        possible_steps = disease_info['possible_steps'][pred]
-        print(f" ||{title}||{description}||{supplement_name}||{possible_steps}")
-
-    elif pred2 == pred3:
-        pred = pred2
         title = disease_info['disease_name'][pred]
         description = disease_info['description'][pred]
         supplement_name = disease_info['supplement_name'][pred]
@@ -58,4 +57,4 @@ def prediction(path1, path2, path3):
         print(f" || || || || ")
 
 
-prediction(var1, var2, var3)
+prediction(var1, var2, var3,var4)
