@@ -1,6 +1,6 @@
 <h3>Applicatio details</h3>
 The application is developed using HTML, CSS, PHP, JS and Python. The Application named as HNet.
-HNet mis a web/mobile based application that is used to maintain and monitor a Smart Horticulture Farming. Smart Horticulture Farming includes an IoT based hydroponic system. First a user has to login to the system using his username and password.
+HNet is a web/mobile based application that is used to maintain and monitor a Smart Horticulture Farming. Smart Horticulture Farming includes an IoT based hydroponic system. First a user has to login to the system using his username and password.
 
 <img src="https://github.com/user-attachments/assets/5541dc80-683d-4aa8-a1e2-6a971e5d3b7e" width="25%">
 
